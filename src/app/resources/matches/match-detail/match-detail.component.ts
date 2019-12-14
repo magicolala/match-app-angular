@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
   providers: [MatchService]
 })
 export class MatchDetailComponent implements OnInit {
-  match: Match;
+  match;
 
   constructor(private matchService: MatchService, private activatedRoute: ActivatedRoute) {
   }
@@ -18,8 +18,9 @@ export class MatchDetailComponent implements OnInit {
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params.id;
 
-    this.matchService.show(id).subscribe((res: Match) => {
-      this.match = res;
+    this.matchService.show(id).subscribe((res) => {
+      this.match = res.match;
+      console.log(this.match);
     });
   }
 

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://bridge.buddyweb.fr/api/tutorials/'
+  apiBaseUrl: 'https://bridge.buddyweb.fr/api/tutorials/',
+  apiKey: 'a4bd0d662a42447fad68f678c998d1a7'
 };
 
 /*

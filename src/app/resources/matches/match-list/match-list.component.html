@@ -1,26 +1,31 @@
 <section class="content-info">
-  <div class="container padding-top">
+  <div class="container">
+    <div class="row padding-top padding-bottom">
+      <div class="col-md-12">
+        <h2 class="text-center" style="color: white;">Ligue des champions</h2>
+      </div>
+    </div>
     <div class="row">
       <div class="col-lg-12">
         <div class="recent-results results-page">
           <div class="info-results">
             <ul>
               <li *ngFor="let match of matches">
-								<span class="head">{{ match.home_team }} Vs {{ match.away_team }}
-<!--									<span class="date">27 Jun 2017</span>-->
+								<span class="head">{{ match.homeTeam.name }} Vs {{ match.awayTeam.name }}
+                  <span class="date">{{match.utcDate|date:'dd/MM/yy HH:mm'}}</span>
 								</span>
-                <div class="goals-result" style="display: flex; justify-content: space-around;">
+                <div class="goals-result text-center" style="  display: grid; grid-template-columns: [first] 30% auto [last] 30%;">
                   <a href="#">
-                    <img [src]="match.home_team_image" alt=""> {{ match.home_team }}
+                    <img [src]="match.home_team_image" alt=""> {{ match.homeTeam.name }}
 
                   </a>
-                  <span class="goals">
-											<b>{{ match.home_team_goals }}</b> -
-											<b>{{ match.away_team_goals }}</b>
+                  <span class="goals" style="margin: 0 auto;">
+											<b>{{ match.score.fullTime.homeTeam }}</b> -
+											<b>{{ match.score.fullTime.awayTeam }}</b>
 											<a [routerLink]="['matches', match.id]" class="btn theme">View More</a>
 										</span>
                   <a href="#">
-                    <img [src]="match.away_team_image" alt=""> {{ match.away_team }}
+                    <img [src]="match.away_team_image" alt=""> {{ match.awayTeam.name }}
                   </a>
                 </div>
               </li>

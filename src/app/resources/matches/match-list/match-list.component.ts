@@ -9,12 +9,15 @@ import {Match} from '../../../common/interfaces/match';
   providers: [MatchService]
 })
 export class MatchListComponent implements OnInit {
-  matches: Match[];
+  matches;
   constructor(private matchService: MatchService) { }
 
   ngOnInit() {
-    this.matchService.list().subscribe((res: Match[]) => {
-      this.matches = res;
+    this.matchService.list().subscribe((res) => {
+      this.matches = res.matches.reverse();
+      this.matches.forEach((match) => {
+        console.log(match);
+      });
     });
   }
 
