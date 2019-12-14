@@ -1,0 +1,29 @@
+<div class="section-title single-result">
+  <div class="container">
+
+      <!-- Result -->
+      <div class="row">
+        <div class="col-md-5 col-lg-5">
+          <div class="team">
+            <img [src]="match.home_team_image" alt="club-logo">
+            <a href="single-team.html">{{match.home_team}}</a>
+          </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2">
+          <div class="result-match">
+            {{match.home_team_goals}} : {{match.away_team_goals}}
+          </div>
+        </div>
+
+        <div class="col-md-5 col-lg-5">
+          <div class="team right">
+            <a href="single-team.html">{{match.away_team}}</a>
+            <img [src]="match.away_team_image" alt="club-logo">
+          </div>
+        </div>
+      </div>
+      <!-- End Result -->
+
+  </div>
+</div>

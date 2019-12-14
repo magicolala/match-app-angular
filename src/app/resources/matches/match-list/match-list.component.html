@@ -1,0 +1,33 @@
+<section class="content-info">
+  <div class="container padding-top">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="recent-results results-page">
+          <div class="info-results">
+            <ul>
+              <li *ngFor="let match of matches">
+								<span class="head">{{ match.home_team }} Vs {{ match.away_team }}
+<!--									<span class="date">27 Jun 2017</span>-->
+								</span>
+                <div class="goals-result" style="display: flex; justify-content: space-around;">
+                  <a href="#">
+                    <img [src]="match.home_team_image" alt=""> {{ match.home_team }}
+
+                  </a>
+                  <span class="goals">
+											<b>{{ match.home_team_goals }}</b> -
+											<b>{{ match.away_team_goals }}</b>
+											<a [routerLink]="['matches', match.id]" class="btn theme">View More</a>
+										</span>
+                  <a href="#">
+                    <img [src]="match.away_team_image" alt=""> {{ match.away_team }}
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
